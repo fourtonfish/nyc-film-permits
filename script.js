@@ -4,8 +4,8 @@
 // will see an error in the editor
 /* global Chart */
 
-// create an object with world population data
-const data = [
+// create data objects
+const permitsByBorough = [
   {
     "borough": "Manhattan",
     "permits": 20302
@@ -28,16 +28,74 @@ const data = [
   }
 ];
 
+const permitsByYear = [
+  { 
+    "year": 2012,
+    "permits": 6928
+  },
+  { 
+    "year": 2013,
+    "permits": 8071
+  },
+  { 
+    "year": 2014,
+    "permits": 8002
+  },
+  { 
+    "year": 2015,
+    "permits": 8871
+  }
+];
+
+const permitsByType = [
+  {
+    "type": "Television",
+    "permits": 21175
+  },
+  {
+    "type": "Film",
+    "permits": 7282
+  },
+  {
+    "type": "Theater",
+    "permits": 3660
+  },
+  {
+    "type": "Commercial",
+    "permits": 3434
+  },
+  {
+    "type": "Still Photography",
+    "permits": 2609
+  },
+  {
+    "type": "WEB",
+    "permits": 1388
+  },
+  {
+    "type": "Student",
+    "permits": 267
+  },
+  {
+    "type": "Documentary",
+    "permits": 205
+  },
+  {
+    "type": "Music Video",
+    "permits": 152
+  }
+];
+
 // create an array of continents to use as labels for the charts
-const boroughs = data.map( function( dataPoint ){
+const boroughs = permitsByBorough.map( function( dataPoint ){
   return dataPoint.borough;
 } );
 
-const permits = data.map( function( dataPoint ){
+const permits = permitsByBorough.map( function( dataPoint ){
   return dataPoint.permits;
 } );
 
-const bar = document.getElementById('barChart').getContext('2d');
+const bar = document.getElementById('permits-by-borough-bar-chart').getContext('2d');
 const barChart = new Chart(bar, {
   type: 'bar', // make it a bar chart
   data: {
@@ -69,7 +127,7 @@ const barChart = new Chart(bar, {
     tooltips: {
       callbacks: {
         label: function(tooltipItem, data) {
-          var value = data.datasets[0].data[tooltipItem.index];
+          var value = permitsByBorough.datasets[0].data[tooltipItem.index];
           value = value.toString();
           value = value.split(/(?=(?:...)*$)/);
           value = value.join(',');
@@ -80,14 +138,14 @@ const barChart = new Chart(bar, {
   }
 });
 
-// initialize a chart and put it in the 'pieChart' div
-const pie = document.getElementById('pieChart').getContext('2d');
-const pieChart = new Chart(pie, {
+// initialize a chart and put it in the 'permits-by-borough-pie-chart' div
+const permitsByBoroughPie = document.getElementById('permits-by-borough-pie-chart').getContext('2d');
+const permitsByBoroughPiehart = new Chart(permitsByBoroughPie, {
   type: 'pie', // make it a pie chart
   data: {
-    labels: boroughs, // use the array of continents to label each 
+    labels: boroughs, // use the array of boroughs to label each 
     datasets: [{
-      data: permits, // use the array of populations to draw pie slices
+      data: permits, // use the array of boroughs to draw pie slices
       // set each pie slice to a translucent color
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -111,24 +169,10 @@ const pieChart = new Chart(pie, {
     }]
   },
   options: {
-    // the y-axis should start at 0
-    // scales: {
-    //   yAxes: [{
-    //     ticks: {
-    //       beginAtZero:true,
-    //       userCallback: function(value, index, values) {
-    //           value = value.toString();
-    //           value = value.split(/(?=(?:...)*$)/);
-    //           value = value.join(',');
-    //           return value;
-    //       }
-    //     }
-    //   }]
-    // },
     tooltips: {
       callbacks: {
         label: function(tooltipItem, data) {
-          var value = data.datasets[0].data[tooltipItem.index];
+          var value = permitsByBorough[tooltipItem.index].permits;
           value = value.toString();
           value = value.split(/(?=(?:...)*$)/);
           value = value.join(',');
