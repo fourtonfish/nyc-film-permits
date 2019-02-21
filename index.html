@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NYC Film Permits 🗽</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- import Chart.js library via CDN, per Chart.js documentation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css" />
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>  
+  <body>
+    <div class="container">
+      <div class="row mt-3">
+        <div class="col-sm-12">
+          <h1>NYC Film Permits <span>🗽</span></h1>
+          <p>
+            Breakdown of 40,172 film permits issued in New York between January 1, 2012 and November 21, 2018, by borough.
+          </p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm-12 col-md-6">
+          <div class="chart-container">
+            <canvas id="barChart" aria-label="A bar chart showing continental population" role="img">
+            </canvas>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="chart-container">
+            <canvas id="pieChart" aria-label="A pie chart showing continental population" role="img">
+            </canvas>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm-12">
+          <p>
+            This project is a remix of <a href="https://glitch.com/edit/#!/starter-chartjs">starter-chartjs</a> by <a href="https://glitch.com/@lyzidiamond">Lyzi Diamond</a>.
+          </p>
+          <ul>
+            <li>Source of data: <a href="https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p/">data.cityofnewyork.us</a>.</li>
+            <li>Made with <a href="https://glitch.com/">Glitch</a> and <a href="https://chartjs.org">Chart.js</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
