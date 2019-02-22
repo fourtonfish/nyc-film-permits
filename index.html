@@ -26,30 +26,81 @@
       </div>
       <div class="row mt-3">
         <div class="col-sm-12">
-          <h2>
+          <h2 id="film-permits-by-borough">
             Film permits by borough
           </h2>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-12 col-lg-6">
           <div class="chart-container">
-            <canvas id="permits-by-borough-bar-chart" aria-label="A bar chart showing continental population" role="img">
+            <canvas id="permits-by-borough-bar-chart" aria-label="A bar chart showing film permits issued in New York by borough" role="img">
             </canvas>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-12 col-lg-6">
           <div class="chart-container">
-            <canvas id="permits-by-borough-pie-chart" aria-label="A pie chart showing continental population" role="img">
+            <canvas id="permits-by-borough-pie-chart" aria-label="A pie chart showing film permits issued in New York by borough" role="img">
             </canvas>
           </div>
         </div>
       </div>
       <div class="row mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <h2 id="film-permits-by-year">
+            Film permits by year
+          </h2>
+          <div class="chart-container">
+            <canvas id="permits-by-year" aria-label="A bar chart showing film permits issued in New York by year of issuance" role="img">
+            </canvas>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <h2 id="film-permits-by-production-type">
+            Film permits by production type<span title="This chart uses a logarithmic scale.">*</span>
+          </h2>
+          <div class="chart-container">
+            <canvas id="permits-by-type" aria-label="A bar chart showing film permits issued in New York by the type of permit" role="img">
+            </canvas>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <h2 id="film-permits-by-country-origin">
+            Film permits by country of project's origin<span title="This chart uses a logarithmic scale.">*</span>
+          </h2>
+          <div class="chart-container">
+            <canvas id="permits-by-country" aria-label="A bar chart showing film permits issued in New York by country" role="img">
+            </canvas>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+        <!-- 
+          <h2>
+            Film permits by XXX
+          </h2>
+          <div class="chart-container">
+            <canvas id="permits-by-XXX" aria-label="A bar chart showing film permits issued in New York by XXX" role="img">
+            </canvas>
+          </div>
+        -->
+        </div>
+      </div>
+      <div class="row mt-3">
         <div class="col-sm-12">
+          <div class="note">
+            <p>
+              <strong>*</strong>This chart uses a <a href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic scale</a>.
+            </p>
+          </div>
+          <h2 id="attributions">
+            Attributions
+          </h2>          
           <p>
             This project is a remix of <a href="https://glitch.com/edit/#!/starter-chartjs">starter-chartjs</a> by <a href="https://glitch.com/@lyzidiamond">Lyzi Diamond</a>.
           </p>
           <ul class="pl-4">
             <li>Source of data: <a href="https://data.cityofnewyork.us/City-Government/Film-Permits/tg4x-b46p/">data.cityofnewyork.us</a>.</li>
+            <li>Color paletter generated using <a href="http://colorbrewer2.org">colorbrewer2.org</a>.</li>
             <li>Made with <a href="https://glitch.com/">Glitch</a> and <a href="https://chartjs.org">Chart.js</a></li>
           </ul>
         </div>
