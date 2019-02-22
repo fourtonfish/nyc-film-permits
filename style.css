@@ -1,32 +1,51 @@
 body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  color: #191919;
   margin: 0.5em;
 }
 
 h1 {
-  font-style: italic;
-  color: #373fff;
   margin-bottom: 0em;
   margin-top: 0em;
 }
 
-h1 > span{
-  font-style: normal;  
+h2:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 canvas {
-  border: 1px solid purple;
+  border: 1px solid #d1d1d1;
 }
+
+canvas:hover {
+  border: 1px solid #191919;
+}
+
+canvas, canvas:hover {
+  transition: border 0.1s ease-in-out;
+}
+
 
 p {
   margin: 0.2em
 }
 
+
 .chart-container {
   position: relative;
-  height: 40%;
+/*   height: 40%; */
   width: 100%;
   max-width: 600px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.note{
+  padding: 1em 0;
+}
+
+.note *{
+  font-style: italic;  
+  color: #4a4a4a;
 }
