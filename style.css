@@ -9,16 +9,20 @@ h1 {
   margin-top: 0em;
 }
 
-h2:hover{
+h2.section-title{
+  display: inline-block;
+}
+
+h2.section-title:hover{
   cursor: pointer;
   text-decoration: underline;
 }
 
-canvas {
+canvas.chartjs-render-monitor {
   border: 1px solid #d1d1d1;
 }
 
-canvas:hover {
+canvas.chartjs-render-monitor:hover {
   border: 1px solid #191919;
 }
 
@@ -26,11 +30,13 @@ canvas, canvas:hover {
   transition: border 0.1s ease-in-out;
 }
 
-
 p {
   margin: 0.2em
 }
 
+img{
+  max-width: 100%;
+}
 
 .chart-container {
   position: relative;
@@ -48,4 +54,10 @@ p {
 .note *{
   font-style: italic;  
   color: #4a4a4a;
+}
+
+
+.note-log-scale{
+  /* Notes aboute logarithmic scale being used for the chart should only be visible if the chart is rendered. */
+  display: none;
 }

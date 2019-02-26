@@ -25,74 +25,88 @@
         </div>
       </div>
       <div class="row mt-3">
-        <div class="col-sm-12">
-          <h2 id="film-permits-by-borough">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <h2 class="section-title" id="film-permits-by-borough">
             Film permits by borough
           </h2>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-6">
           <div class="chart-container">
-            <canvas id="permits-by-borough-bar-chart" aria-label="A bar chart showing film permits issued in New York by borough" role="img">
+            <canvas id="permits-by-borough-pie-chart" aria-label="A pie chart showing film permits issued in New York by borough" role="img" tabindex="0">
+              <ul>
+                <li>Manhattan: 20,302 permits</li>
+                <li>Brooklyn: 12,085 permits</li>
+                <li>Queens: 6,201 permits</li>
+                <li>Bronx: 1,083 permits</li>
+                <li>Staten Island: 501 permits</li>
+              </ul>              
             </canvas>
           </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6">
-          <div class="chart-container">
-            <canvas id="permits-by-borough-pie-chart" aria-label="A pie chart showing film permits issued in New York by borough" role="img">
-            </canvas>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-sm-12 col-md-12 col-lg-6">
-          <h2 id="film-permits-by-year">
+          <h2 class="section-title" id="film-permits-by-year">
             Film permits by year
           </h2>
           <div class="chart-container">
-            <canvas id="permits-by-year" aria-label="A bar chart showing film permits issued in New York by year of issuance" role="img">
-            </canvas>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-6">
-          <h2 id="film-permits-by-production-type">
-            Film permits by production type<span title="This chart uses a logarithmic scale.">*</span>
-          </h2>
-          <div class="chart-container">
-            <canvas id="permits-by-type" aria-label="A bar chart showing film permits issued in New York by the type of permit" role="img">
+            <canvas id="permits-by-year" aria-label="A bar chart showing film permits issued in New York by year of issuance" role="img" tabindex="0">
+              <ul>
+                <li>2012: 6,928 permits</li>
+                <li>2013: 8,071 permits</li>
+                <li>2014: 8,002 permits</li>
+                <li>2015: 8,871 permits</li>
+              </ul>              
             </canvas>
           </div>
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-sm-12 col-md-12 col-lg-6">
-          <h2 id="film-permits-by-country-origin">
-            Film permits by country of project's origin<span title="This chart uses a logarithmic scale.">*</span>
+          <h2 class="section-title" id="film-permits-by-production-type">
+            Film permits by production type<span class="note-log-scale" title="This chart uses a logarithmic scale.">*</span>
           </h2>
           <div class="chart-container">
-            <canvas id="permits-by-country" aria-label="A bar chart showing film permits issued in New York by country" role="img">
+            <canvas id="permits-by-type" aria-label="A bar chart showing film permits issued in New York by the type of permit" role="img" tabindex="0">
+              <ul>
+                <li>Television: 21,175 permits</li>
+                <li>Film: 7,282 permits</li>
+                <li>Theater: 3,660 permits</li>
+                <li>Commercial: 3,434 permits</li>
+                <li>Still Photography: 2,609 permits</li>
+                <li>WEB: 1,388 permits</li>
+                <li>Student: 267 permits</li>
+                <li>Documentary: 205 permits</li>
+                <li>Music Video: 152 permits</li>
+              </ul>              
             </canvas>
           </div>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6">
-        <!-- 
-          <h2>
-            Film permits by XXX
+          <h2 class="section-title" id="film-permits-by-country-origin">
+            Film permits by country of project's origin<span class="note-log-scale" title="This chart uses a logarithmic scale.">*</span>
           </h2>
           <div class="chart-container">
-            <canvas id="permits-by-XXX" aria-label="A bar chart showing film permits issued in New York by XXX" role="img">
+            <canvas id="permits-by-country" aria-label="A bar chart showing film permits issued in New York by country" role="img" tabindex="0">
+              <ul>
+                <li>USA: 40,125 permits</li>
+                <li>UK: 10 permits</li>
+                <li>Japan: 8 permits</li>
+                <li>France: 7 permits</li>
+                <li>Panama: 7 permits</li>
+                <li>Canada: 6 permits</li>
+                <li>Australia: 5 permits</li>
+                <li>Netherlands: 3 permits</li>
+                <li>Germany: 1 permits</li>
+              </ul>              
             </canvas>
           </div>
-        -->
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-sm-12">
-          <div class="note">
+          <div class="note note-log-scale">
             <p>
               <strong>*</strong>This chart uses a <a href="https://en.wikipedia.org/wiki/Logarithmic_scale">logarithmic scale</a>.
             </p>
           </div>
-          <h2 id="attributions">
+          <h2 class="section-title" id="attributions">
             Attributions
           </h2>          
           <p>

@@ -174,47 +174,6 @@ const permitsByCountryData = permitsByCountry.map(  function(  dataPoint  ){
 
 /* Inserting charts. */
 
-const permitsByBoroughBar = document.getElementById( 'permits-by-borough-bar-chart' ).getContext( '2d' );
-const permitsByBoroughBarChart = new Chart( permitsByBoroughBar, {
-  type: 'bar',
-  data: {
-    labels: boroughLabels,
-    datasets: [{
-      label: 'Permits issued',
-      data: permitsByBoroughData,
-      backgroundColor: colorOpacity( colorPalette[1], 0.5 ),
-      borderColor: colorPalette[1],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero:true,
-          userCallback: function( value, index, values ) {
-              value = value.toString();
-              value = value.split( /(?=(?:...)*$)/ );
-              value = value.join( ',' );
-              return value;
-          }
-        }
-      }]
-    },
-    tooltips: {
-      callbacks: {
-        label: function( tooltipItem, data ) {
-          var value = permitsByBorough[tooltipItem.index].permits;
-          value = value.toString();
-          value = value.split( /(?=(?:...)*$)/ );
-          value = value.join( ',' );
-          return value + ' permits';
-        }
-      }
-    }
-  }
-} );
-
 const permitsByBoroughPie = document.getElementById( 'permits-by-borough-pie-chart' ).getContext( '2d' );
 const permitsByBoroughPieChart = new Chart( permitsByBoroughPie, {
   type: 'pie',
@@ -403,7 +362,7 @@ const permitsByCountryChart = new Chart( permitsByCountryElement, {
 
 /* Clicking on a section title scrolls the section into view and updates the URL linking directly to the section */
 
-const sectionHeaders = document.getElementsByTagName(  'h2'  );
+const sectionHeaders = document.getElementsByTagName( 'h2' );
 
 for (  let sectionHeaderIndex = 0; sectionHeaderIndex < sectionHeaders.length; sectionHeaderIndex++  ){
   sectionHeaders[sectionHeaderIndex].onclick = function(  ev  ){
@@ -419,3 +378,18 @@ for (  let sectionHeaderIndex = 0; sectionHeaderIndex < sectionHeaders.length; s
     } catch( err ){ /* noop */ }
   }
 }
+
+var logScaleNotes = document.getElementsByClassName( 'note-log-scale' );
+
+for ( let i = 0; i < logScaleNotes.length; i++ ){
+  logScaleNotes[i].style.display = 'initial';
+}
+
+let canvasCharts = document.querySelectorAll('.chart-container canvas');
+
+for ( let i = 0; i < canvasCharts.length; i++ ){
+  let fallbackContent = canvasCharts[i].textContent;
+  let currentLabel = canvasCharts[i].getAttribute( 'aria-label' );
+  canvasCharts[i].setAttribute( 'aria-label',  `${ currentLabel }: ${ fallbackContent }` );
+}
+
